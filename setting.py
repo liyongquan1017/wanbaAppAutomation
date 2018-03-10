@@ -17,6 +17,9 @@ def case(platformName,platformVersion,deviceName,appPackage,appActivity,userName
         driver.find_element_by_id('com.wodi.who:id/input_username').send_keys(userName)
         driver.hide_keyboard()
         driver.find_element_by_id('com.wodi.who:id/input_password').send_keys(passWord)
+        driver.find_element_by_id('com.wodi.who:id/input_password').click()
+        driver.find_element_by_id('com.wodi.who:id/input_username').click()
+        driver.hide_keyboard()
         driver.find_element_by_id('com.wodi.who:id/complete').click()
         return driver
 

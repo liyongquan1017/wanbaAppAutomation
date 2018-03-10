@@ -10,7 +10,7 @@ def profile():
         sleep(3)
         driver.find_element_by_id('com.wodi.who:id/username_login').click()
         sleep(3)
-        driver.find_element_by_id('com.wodi.who:id/input_username').send_keys('10300')
+        driver.find_element_byla_id('com.wodi.who:id/input_username').send_keys('10300')
         sleep(3)
         driver.find_element_by_id('com.wodi.who:id/input_password').send_keys('10300')
         sleep(3)

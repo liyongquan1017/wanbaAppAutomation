@@ -24,7 +24,7 @@ def profile():
         driver.keyevent(4)
         x = driver.get_window_size()['width']
         y = driver.get_window_size()['height']
-        sleep(0.5)
+        sleep(1)
         driver.swipe(x / 2, y * 8 / 10, x / 2, y * 3 / 10, 200)
         # 进入徽章
         driver.find_element_by_id('com.wodi.who:id/honors_layout').click()
