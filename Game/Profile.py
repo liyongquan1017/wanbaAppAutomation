@@ -23,12 +23,12 @@ def profile():
         driver.find_element_by_id('com.wodi.who:id/album').click()
         sleep(1)
         #滑动页面
-        setting.swipDown(3)
+        setting.swipUp(3)
         setting.swipDown(2)
         #进入照片墙
         driver.find_element_by_android_uiautomator("text(\"照片墙\")").click()
         # 滑动页面
-        setting.swipDown(3)
+        setting.swipUp(3)
         setting.swipDown(2)
         driver.keyevent(4)
         sleep(2)
@@ -43,13 +43,13 @@ def profile():
         driver.find_element_by_id('com.wodi.who:id/iv_user_icon').click()
         # 进入礼物
         sleep(2)
-        setting.swipDown(1)
-        sleep(5)
+        setting.swipUp(1)
+        sleep(1)
         driver.find_element_by_id('com.wodi.who:id/gift_cover').click()
         driver.find_element_by_android_uiautomator("text(\"收到礼物\")").click()
         # 滑动页面
         sleep(2)
-        setting.swipDown(3)
+        setting.swipUp(3)
         setting.swipDown(2)
         sleep(1)
         driver.find_element_by_android_uiautomator("text(\"月贡献榜\")").click()

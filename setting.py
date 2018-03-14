@@ -26,19 +26,30 @@ def case(platformName,platformVersion,deviceName,appPackage,appActivity,userName
 driver = case('Android', '8.0.0', 'GWY0216B26002053', 'com.wodi.who', '.login.SplashActivity','10369','10369')
 x = driver.get_window_size()['width']
 y = driver.get_window_size()['height']
-def swipDown(n):
+def swipUp(n):
         while n > 0:
                 sleep(1)
                 driver.swipe(x / 2, y * 8 / 10, x / 2, y * 3 / 10, 200)
                 sleep(1)
                 n = n - 1
-def swipUp(n):
+def swipDown(n):
         while n > 0:
                 sleep(2)
                 driver.swipe(x / 2, y * 3 / 10, x / 2, y * 8 / 10, 200)
                 sleep(2)
                 n = n - 1
-
+def swipRight(n):
+        while n > 0:
+                sleep(2)
+                driver.swipe(x * 3 / 10, y / 2, x * 8 / 10, y / 2, 200)
+                sleep(2)
+                n = n - 1
+def swipLeft(n):
+        while n > 0:
+                sleep(2)
+                driver.swipe(x * 8 / 10 , y / 2, x * 3 /10, y / 2, 200)
+                sleep(2)
+                n = n - 1
 
 
 
