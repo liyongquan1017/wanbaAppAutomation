@@ -4,8 +4,8 @@ from time import sleep
 import time
 import setting
 # profile 页
+driver = setting.driver
 def profile():
-    driver = setting.case('Android', '8.0.0', 'GWY0216B26002053', 'com.wodi.who', '.login.SplashActivity','10369','10369')
     try:
         # 点击首页个人头像
         driver.find_element_by_id('com.wodi.who:id/iv_user_icon').click()
@@ -21,17 +21,37 @@ def profile():
         # driver.keyevent(4)
         # 进入相册
         driver.find_element_by_id('com.wodi.who:id/album').click()
-        driver.keyevent(4)
-        x = driver.get_window_size()['width']
-        y = driver.get_window_size()['height']
         sleep(1)
-        driver.swipe(x / 2, y * 8 / 10, x / 2, y * 3 / 10, 200)
+        #滑动页面
+        setting.swipDown(3)
+        setting.swipDown(2)
+        #进入照片墙
+        driver.find_element_by_android_uiautomator("text(\"照片墙\")").click()
+        # 滑动页面
+        setting.swipDown(3)
+        setting.swipDown(2)
+        driver.keyevent(4)
+        sleep(2)
+        driver.keyevent(4)
+        sleep(2)
+        setting.swipDown(1)
         # 进入徽章
         driver.find_element_by_id('com.wodi.who:id/honors_layout').click()
         driver.keyevent(4)
+        driver.keyevent(4)
+        # 点击首页个人头像
+        driver.find_element_by_id('com.wodi.who:id/iv_user_icon').click()
         # 进入礼物
-        driver.find_element_by_id('com.wodi.who:id/gift_layout').click()
+        sleep(2)
+        setting.swipDown(1)
+        sleep(5)
+        driver.find_element_by_id('com.wodi.who:id/gift_cover').click()
         driver.find_element_by_android_uiautomator("text(\"收到礼物\")").click()
+        # 滑动页面
+        sleep(2)
+        setting.swipDown(3)
+        setting.swipDown(2)
+        sleep(1)
         driver.find_element_by_android_uiautomator("text(\"月贡献榜\")").click()
         driver.keyevent(4)
         driver.quit()
