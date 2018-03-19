@@ -34,7 +34,7 @@ def profile():
         sleep(2)
         driver.keyevent(4)
         sleep(2)
-        setting.swipDown(1)
+        setting.swipUp(1)
         # 进入徽章
         driver.find_element_by_id('com.wodi.who:id/honors_layout').click()
         driver.keyevent(4)
